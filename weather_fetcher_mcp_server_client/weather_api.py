@@ -2,8 +2,11 @@ import requests
 import re
 from datetime import datetime, timedelta
 import logging
+from dotenv import load_dotenv
+import os
 
-API_KEY = "fadc416a8fc94eb493c73909250912"
+load_dotenv(override=True)
+API_KEY = os.getenv("WEATHER_API_KEY")
 
 def geocode_location(location: str):
    # WeatherAPI supports direct location query, no separate geocoding
